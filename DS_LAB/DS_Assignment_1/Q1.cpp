@@ -1,12 +1,12 @@
-1) Develop a Menu driven program to demonstrate the following operations of Arrays
-1.CREATE  : user enters elements .
-2. DISPLAY  : prints array contents .
-3. INSERT : insert element at a given position .
-4. DELETE : delete element from a given position .
-5. LINEAR SEARCH : search for an element .
-6. EXIT : quit program .
+// Q1) Develop a Menu driven program to demonstrate the following operations of Arrays
+// 1. CREATE  : user enters elements .
+// 2. DISPLAY  : prints array contents .
+// 3. INSERT : insert element at a given position .
+// 4. DELETE : delete element from a given position .
+// 5. LINEAR SEARCH : search for an element .
+// 6. EXIT : quit program .
 
-//code: 
+// Solution:
 #include <iostream>
 using namespace std;
 

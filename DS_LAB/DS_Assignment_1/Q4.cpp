@@ -1,7 +1,8 @@
-//4) Implement the logic to
+// Q4) Implement the logic to
+
 //a. Reverse the elements of an array:
-//ans:
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
     int arr[5] = {1, 2, 3, 4, 5};
@@ -12,14 +13,16 @@ int main() {
         arr[i] = arr[4 - i];
         arr[4 - i] = temp;
     }
-    for (i = 0; i < 5; i++)
-        printf("%d ", arr[i]);
+    for (i = 0; i < 5; i++){
+        cout << arr[i];
+    }
+
     return 0;
 }
 
 //b. Find the matrix multiplication
-ans:
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
     int a[2][2] = {{1, 2}, {3, 4}};
@@ -33,16 +36,17 @@ int main() {
                 c[i][j] += a[i][k] * b[k][j];
 
     for (i = 0; i < 2; i++) {
-        for (j = 0; j < 2; j++)
-            printf("%d ", c[i][j]);
-        printf("\n");
+        for (j = 0; j < 2; j++){
+            cout << c[i][j];
+        }
+        cout << endl;
     }
     return 0;
 }
 
 //c. Find the Transpose of a Matrix
-Ans:
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
     int a[2][3] = {{1, 2, 3}, {4, 5, 6}};
@@ -55,9 +59,10 @@ int main() {
 
 
     for (i = 0; i < 3; i++) {
-        for (j = 0; j < 2; j++)
-            printf("%d ", t[i][j]);
-        printf("\n");
+        for (j = 0; j < 2; j++){
+            cout << t[i][j];
+        }
+        cout << endl;
     }
     return 0;
 }
