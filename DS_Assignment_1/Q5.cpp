@@ -1,12 +1,12 @@
 // Q5) Write a program to find sum of every row and every column in a two-dimensional array.
 
-//Solution:
+// Solution:
 #include <iostream>
 using namespace std;
 
 int main() {
     int rows, cols;
-    
+
     cout << "Enter number of rows: ";
     cin >> rows;
     cout << "Enter number of columns: ";

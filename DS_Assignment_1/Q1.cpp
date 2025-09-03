@@ -13,16 +13,17 @@ using namespace std;
 int arr[10], n = 0;
 
 void create() {
-    cout<<"Enter number of elements:";
-    cin>>n;
-    cout <<"Enter elements:";
+    cout << "Enter number of elements:";
+    cin >> n;
+    cout << "Enter elements:";
     for (int i = 0; i < n; i++) {
-	cin >> arr[i];
+        cin >> arr[i];
     }
 }
 
 void display() {
-    if (n == 0) cout <<"Array is empty"<<endl;
+    if (n == 0)
+        cout << "Array is empty" << endl;
     else {
         cout << "Array: ";
         for (int i = 0; i < n; i++) cout << arr[i] << " ";
@@ -34,13 +35,12 @@ void insert() {
     int pos, val;
     cout << "Enter position and value: ";
     cin >> pos >> val;
-    if (pos < 0 || pos > n) { 
-        cout << "Invalid position\n"; 
-        return; 
+    if (pos < 0 || pos > n) {
+        cout << "Invalid position\n";
+        return;
     }
-    for (int i = n; i > pos; i--) 
-        arr[i] = arr[i - 1];
-    arr[pos] = val; 
+    for (int i = n; i > pos; i--) arr[i] = arr[i - 1];
+    arr[pos] = val;
     n++;
 }
 
@@ -48,12 +48,11 @@ void del() {
     int pos;
     cout << "Enter position to delete: ";
     cin >> pos;
-    if (pos < 0 || pos >= n) { 
-        cout << "Invalid position\n"; 
-        return; 
+    if (pos < 0 || pos >= n) {
+        cout << "Invalid position\n";
+        return;
     }
-    for (int i = pos; i < n - 1; i++) 
-        arr[i] = arr[i + 1];
+    for (int i = pos; i < n - 1; i++) arr[i] = arr[i + 1];
     n--;
 }
 
@@ -62,7 +61,11 @@ void linearSearch() {
     cout << "Enter value to search: ";
     cin >> key;
     for (int i = 0; i < n; i++) {
-        if (arr[i] == key) { cout << "Found at position " << i << endl; found = 1; break; }
+        if (arr[i] == key) {
+            cout << "Found at position " << i << endl;
+            found = 1;
+            break;
+        }
     }
     if (!found) cout << "Not found\n";
 }
@@ -74,13 +77,26 @@ int main() {
         cout << "Enter choice: ";
         cin >> choice;
         switch (choice) {
-            case 1: create(); break;
-            case 2: display(); break;
-            case 3: insert(); break;
-            case 4: del(); break;
-            case 5: linearSearch(); break;
-            case 6: cout << "Exiting...\n"; break;
-            default: cout << "Invalid choice\n";
+            case 1:
+                create();
+                break;
+            case 2:
+                display();
+                break;
+            case 3:
+                insert();
+                break;
+            case 4:
+                del();
+                break;
+            case 5:
+                linearSearch();
+                break;
+            case 6:
+                cout << "Exiting...\n";
+                break;
+            default:
+                cout << "Invalid choice\n";
         }
     } while (choice != 6);
     return 0;

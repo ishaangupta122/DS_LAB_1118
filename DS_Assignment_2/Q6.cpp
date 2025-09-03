@@ -28,13 +28,10 @@ void add(Element a[], int n1, Element b[], int n2) {
             cout << a[i].row << " " << a[i].col << " " << a[i].val + b[j].val << endl;
             i++;
             j++;
-        } 
-        else if ((a[i].row < b[j].row) || 
-                ((a[i].row == b[j].row) && (a[i].col < b[j].col))) {
+        } else if ((a[i].row < b[j].row) || ((a[i].row == b[j].row) && (a[i].col < b[j].col))) {
             cout << a[i].row << " " << a[i].col << " " << a[i].val << endl;
             i++;
-        } 
-        else {
+        } else {
             cout << b[j].row << " " << b[j].col << " " << b[j].val << endl;
             j++;
         }
@@ -69,8 +66,8 @@ void multiply(Element a[], int n1, int rows, int cols) {
 }
 
 int main() {
-    Element A[] = {{0,0,5},{0,2,8},{1,1,3}};
-    Element B[] = {{0,0,1},{0,2,2},{1,1,4}};
+    Element A[] = {{0, 0, 5}, {0, 2, 8}, {1, 1, 3}};
+    Element B[] = {{0, 0, 1}, {0, 2, 2}, {1, 1, 4}};
     int n1 = 3, n2 = 3;
 
     transpose(A, n1);

@@ -24,6 +24,6 @@ int main() {
     }
 
     cout << "Distinct elements: " << count;
-    
+
     return 0;
 }
