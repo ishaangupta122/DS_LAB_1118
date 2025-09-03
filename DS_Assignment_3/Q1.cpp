@@ -21,7 +21,7 @@ void push(int x) {
 int pop() {
     if (isEmpty()) {
         cout << "Stack Underflow! Cannot pop." << endl;
-        return -1;   
+        return -1;
     } else {
         return stackArr[top--];
     }
@@ -74,14 +74,12 @@ int main() {
 
             case 2:
                 val = pop();
-                if (val != -1)
-                    cout << "Element: " << val << " popped from index: " << top << endl;
+                if (val != -1) cout << "Element: " << val << " popped from index: " << top << endl;
                 break;
 
             case 3:
                 val = peek();
-                if (val != -1)
-                    cout << "Top element: " << val << endl;
+                if (val != -1) cout << "Top element: " << val << endl;
                 break;
 
             case 4:

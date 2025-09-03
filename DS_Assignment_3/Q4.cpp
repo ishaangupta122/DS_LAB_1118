@@ -1,9 +1,8 @@
-// 4. Write a program for the evaluation of a Postfix expression. 
+// 4. Write a program for the evaluation of a Postfix expression.
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
-
+int main() {
     return 0;
 }

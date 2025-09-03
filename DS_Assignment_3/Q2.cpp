@@ -1,6 +1,7 @@
-// Q2. Given a string, reverse it using STACK. For example “DataStructure” should be output as “erutcurtSataD.” 
+// Q2. Given a string, reverse it using STACK. For example “DataStructure” should be output as
+// “erutcurtSataD.”
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 #define MAX 20
@@ -27,7 +28,7 @@ void push(char x) {
 int pop() {
     if (isEmpty()) {
         cout << "Stack Underflow! Cannot pop." << endl;
-        return -1;   
+        return -1;
     } else {
         return stackArr[top--];
     }
@@ -42,23 +43,23 @@ int main() {
     cin >> n;
     cout << "Enter characters into stack separated by space: ";
 
-    for(int i = 0; i < n; i++){
-    cin >> val;
-    push(val);
+    for (int i = 0; i < n; i++) {
+        cin >> val;
+        push(val);
     }
 
     cout << "\nOriginal Stack: ";
-    for(int k = 0; k < size; k++){
+    for (int k = 0; k < size; k++) {
         cout << stackArr[k];
     }
 
     cout << "\nReversed Stack with reverse loop: ";
-    for(int j = top; j >= 0; j--){
+    for (int j = top; j >= 0; j--) {
         cout << stackArr[j];
     }
 
     cout << "\nReversed Stack with popping: ";
-    while(!isEmpty()){
+    while (!isEmpty()) {
         cout << stackArr[top];
         pop();
     }

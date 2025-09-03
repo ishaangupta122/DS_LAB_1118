@@ -1,9 +1,8 @@
-// 5. Write a program to convert an Infix expression into a Postfix expression. 
+// 5. Write a program to convert an Infix expression into a Postfix expression.
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main (){
-
+int main() {
     return 0;
 }

@@ -1,11 +1,10 @@
 // 3. Write a program that checks if an expression has balanced parentheses.
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
-
+int main() {
     cout << "Hello";
-    
+
     return 0;
 }
