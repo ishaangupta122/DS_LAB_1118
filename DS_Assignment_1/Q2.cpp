@@ -2,6 +2,7 @@
 // array should contain the unique elements.
 
 // Solution:
+
 // Step 1 —> Start
 // Read the size of the array (n).
 // Read n elements into the array (arr).
