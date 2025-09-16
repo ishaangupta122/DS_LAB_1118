@@ -1,6 +1,5 @@
-// Q5) Write a program to find sum of every row and every column in a two-dimensional array.
+// 5) Write a program to find sum of every row and every column in a two-dimensional array.
 
-// Solution:
 #include <iostream>
 using namespace std;
 

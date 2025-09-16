@@ -1,7 +1,5 @@
-// Q2) Design the logic to remove the duplicate elements from an Array and after the deletion the
+// 2) Design the logic to remove the duplicate elements from an Array and after the deletion the
 // array should contain the unique elements.
-
-// Solution:
 
 // Step 1 —> Start
 // Read the size of the array (n).

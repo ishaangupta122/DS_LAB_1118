@@ -72,7 +72,7 @@ int main() {
   int choice, val;
 
   do {
-    cout << "\n--- Queue Menu ---" << endl;
+    cout << "\n--- Linear Queue Menu ---" << endl;
     cout << "1. Enqueue\n2. Dequeue\n3. isEmpty\n4. isFull\n5. Get Front\n6. "
             "Get Rear\n7. Display\n8. Exit\n";
     cout << "Enter choice: ";

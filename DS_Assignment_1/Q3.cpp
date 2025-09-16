@@ -1,6 +1,5 @@
-// Q3) Predict the Output of the following program:
+// 3) Predict the Output of the following program:
 
-// Solution:
 #include <iostream>
 using namespace std;
 int main() {
