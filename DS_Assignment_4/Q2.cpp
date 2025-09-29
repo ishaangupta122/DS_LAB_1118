@@ -23,15 +23,15 @@ class CircularQueue {
     return front == -1;
   }
 
-  void enqueue(int value) {
+  int enqueue(int value) {
     if (isFull()) {
       cout << "Queue is Full\n";
-      return;
     }
     if (front == -1)
       front = 0;
     rear = (rear + 1) % size;
     arr[rear] = value;
+    return rear;
   }
 
   int dequeue() {
@@ -52,6 +52,7 @@ class CircularQueue {
       cout << "Queue is Empty\n";
       return;
     }
+    cout << "Queue elements are: ";
     int i = front;
     while (true) {
       cout << arr[i] << " ";
@@ -84,7 +85,7 @@ int main() {
       case 1:
         cout << "Enter value: ";
         cin >> val;
-        cq.enqueue(val);
+        cout << val << " Enqeued at index: " << cq.enqueue(val) << endl;
         break;
       case 2:
         cout << "Dequeued: " << cq.dequeue() << endl;
