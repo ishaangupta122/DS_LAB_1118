@@ -23,15 +23,16 @@ class CircularQueue {
     return front == -1;
   }
 
-  int enqueue(int value) {
+  void enqueue(int value) {
     if (isFull()) {
       cout << "Queue is Full\n";
+      return;
     }
-    if (front == -1)
+    if (isEmpty()) {
       front = 0;
+    }
     rear = (rear + 1) % size;
     arr[rear] = value;
-    return rear;
   }
 
   int dequeue() {
@@ -77,7 +78,7 @@ int main() {
 
   while (true) {
     cout << "\n--- Circular Queue Menu ---" << endl;
-    cout << "\n1. Enqueue\n2. Dequeue\n3. Display\n4. Peek\n5. Exit\n";
+    cout << "\n1. Enqueue\n2. Dequeue\n3. isEmpty\n4. isFull\n5. Display\n6. Peek\n7. Exit\n";
     cout << "Enter choice: ";
     cin >> choice;
 
@@ -85,21 +86,30 @@ int main() {
       case 1:
         cout << "Enter value: ";
         cin >> val;
-        cout << val << " Enqeued at index: " << cq.enqueue(val) << endl;
+        cq.enqueue(val);
         break;
       case 2:
-        cout << "Dequeued: " << cq.dequeue() << endl;
+        val = cq.dequeue();
+        if (val != -1)
+          cout << "Dequeued: " << val << endl;
         break;
       case 3:
-        cq.display();
+        cout << (cq.isEmpty() ? "Queue is empty" : "Queue is not empty") << endl;
         break;
       case 4:
-        cq.peek();
+        cout << (cq.isFull() ? "Queue is full" : "Queue is not full") << endl;
         break;
       case 5:
+        cq.display();
+        break;
+      case 6:
+        cq.peek();
+        break;
+      case 7:
+        cout << "Exiting..." << endl;
         return 0;
       default:
-        cout << "Invalid choice!\n";
+        cout << "Invalid choice!" << endl;
     }
   }
 }

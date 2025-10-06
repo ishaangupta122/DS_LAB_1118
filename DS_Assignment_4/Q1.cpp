@@ -19,16 +19,16 @@ int isFull() {
   return rear == MAX - 1 && front == 0;
 }
 
-int enqueue(int x) {
+void enqueue(int x) {
   if (isFull()) {
     cout << "Queue Overflow !" << endl;
+    return;
   }
   if (isEmpty()) {
     front = 0;
   }
   rear++;
   queue[rear] = x;
-  return queue[rear];
 }
 
 int dequeue() {
@@ -37,7 +37,11 @@ int dequeue() {
     return -1;
   } else {
     int dequeuedVal = queue[front];
-    front++;
+    if (front == rear) {
+      front = rear = -1;
+    } else {
+      front++;
+    }
     return dequeuedVal;
   }
 }
@@ -57,9 +61,10 @@ int getRear() {
   }
 }
 
-int display() {
+void display() {
   if (isEmpty()) {
     cout << "Queue is empty !" << endl;
+    return;
   }
   cout << "Queue elements are: " << endl;
   for (int i = front; i <= rear; i++) {
@@ -93,13 +98,11 @@ int main() {
         break;
       }
       case 3: {
-        int emptyVal = isEmpty();
-        cout << (emptyVal ? "Queue is empty" : "Queue is not empty") << endl;
+        cout << (isEmpty() ? "Queue is empty" : "Queue is not empty") << endl;
         break;
       }
       case 4: {
-        int fullVal = isFull();
-        cout << (fullVal ? "Queue is full" : "Queue is not full") << endl;
+        cout << (isFull() ? "Queue is full" : "Queue is not full") << endl;
         break;
       }
       case 5: {
