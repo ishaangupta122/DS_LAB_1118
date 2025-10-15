@@ -1,0 +1,1 @@
+// 4. Write a program to check if a doubly linked list of characters is palindrome or not .
