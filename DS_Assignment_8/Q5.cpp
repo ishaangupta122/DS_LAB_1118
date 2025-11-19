@@ -1,1 +1,1 @@
-// 5. Implement Heapsort(Increasing / Decreasing order).
+// 5. Implement Heapsort (Increasing / Decreasing order).

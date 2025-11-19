@@ -3,4 +3,4 @@
 // (a) Insert an element (no duplicates are allowed),
 // (b) Delete an existing element,
 // (c) Maximum depth of BST
-// (d) Minimum depth of
+// (d) Minimum depth of BST

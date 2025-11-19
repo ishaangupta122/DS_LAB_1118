@@ -1,1 +1,1 @@
-// 4. Write a program to determine whether a given binary tree is a BST or not .
+// 4. Write a program to determine whether a given binary tree is a BST or not.
