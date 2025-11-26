@@ -4,28 +4,10 @@
 // Output: Count: 4 , Updated Linked List: 2->2->3.
 
 #include <iostream>
+
+#include "linked_list.hpp"
+
 using namespace std;
-
-struct Node {
-  int data;
-  Node* next;
-};
-
-// Function to insert a node at the end of the list
-void insert(Node*& head, int value) {
-  Node* newNode = new Node{value, nullptr};
-
-  if (head == nullptr) {
-    head = newNode;
-    return;
-  }
-
-  Node* temp = head;
-  while (temp->next != nullptr)
-    temp = temp->next;
-
-  temp->next = newNode;
-}
 
 // Function to count occurrences of key
 int countKey(Node* head, int key) {
@@ -60,32 +42,28 @@ void deleteKey(Node*& head, int key) {
   }
 }
 
-// Function to print the linked list
-void printList(Node* head) {
-  while (head != nullptr) {
-    cout << head->data;
-    if (head->next != nullptr)
-      cout << "->";
-    head = head->next;
-  }
-}
-
 int main() {
-  Node* head = nullptr;
+  LinkedList list;
 
-  int arr[] = {1, 2, 1, 2, 1, 3, 1};
-  int n = 7;
-  for (int i = 0; i < n; i++)
-    insert(head, arr[i]);
+  list.insertAtEnd(1);
+  list.insertAtEnd(2);
+  list.insertAtEnd(1);
+  list.insertAtEnd(2);
+  list.insertAtEnd(1);
+  list.insertAtEnd(3);
+  list.insertAtEnd(1);
+
+  cout << "Original Linked List: ";
+  list.display();
 
   int key = 1;
+  int count = countKey(list.head, key);
 
-  int count = countKey(head, key);
-  deleteKey(head, key);
+  deleteKey(list.head, key);
 
-  cout << "Count: " << count << endl;
+  cout << "Key: " << key << ", Count: " << count << endl;
   cout << "Updated Linked List: ";
-  printList(head);
+  list.display();
 
   return 0;
 }

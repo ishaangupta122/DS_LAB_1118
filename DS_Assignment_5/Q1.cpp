@@ -10,150 +10,15 @@
 // (h) Display all the node values.
 
 #include <iostream>
+
+#include "linked_list.hpp"
+
 using namespace std;
-
-class Node {
- public:
-  int data;
-  Node* next;
-  Node(int value) {
-    data = value;
-    next = nullptr;
-  }
-};
-
-class LinkedList {
- private:
-  Node* head;
-
- public:
-  LinkedList() {
-    head = nullptr;
-  }
-
-  void insertAtBeginning(int value) {
-    Node* newNode = new Node(value);
-    newNode->next = head;
-    head = newNode;
-  }
-
-  void insertAtEnd(int value) {
-    Node* newNode = new Node(value);
-    if (!head) {
-      head = newNode;
-      return;
-    }
-    Node* temp = head;
-    while (temp->next) {
-      temp = temp->next;
-    }
-    temp->next = newNode;
-  }
-
-  void insertBefore(int target, int value) {
-    if (!head) {
-      return;
-    }
-    if (head->data == target) {
-      insertAtBeginning(value);
-      return;
-    }
-    Node* temp = head;
-    while (temp->next && temp->next->data != target) {
-      temp = temp->next;
-    }
-    if (temp->next) {
-      Node* newNode = new Node(value);
-      newNode->next = temp->next;
-      temp->next = newNode;
-    }
-  }
-
-  void insertAfter(int target, int value) {
-    Node* temp = head;
-    while (temp && temp->data != target) {
-      temp = temp->next;
-    }
-    if (temp) {
-      Node* newNode = new Node(value);
-      newNode->next = temp->next;
-      temp->next = newNode;
-    }
-  }
-
-  void deleteFromBeginning() {
-    if (!head) {
-      return;
-    }
-    Node* temp = head;
-    head = head->next;
-    delete temp;
-  }
-
-  void deleteFromEnd() {
-    if (!head) {
-      return;
-    }
-    if (!head->next) {
-      delete head;
-      head = nullptr;
-      return;
-    }
-    Node* temp = head;
-    while (temp->next->next) {
-      temp = temp->next;
-    }
-    delete temp->next;
-    temp->next = nullptr;
-  }
-
-  void deleteNode(int value) {
-    if (!head) {
-      return;
-    }
-    if (head->data == value) {
-      Node* temp = head;
-      head = head->next;
-      delete temp;
-      return;
-    }
-    Node* temp = head;
-    while (temp->next && temp->next->data != value) {
-      temp = temp->next;
-    }
-    if (temp->next) {
-      Node* delNode = temp->next;
-      temp->next = delNode->next;
-      delete delNode;
-    }
-  }
-
-  int search(int value) {
-    Node* temp = head;
-    int pos = 1;
-    while (temp) {
-      if (temp->data == value) {
-        return pos;
-      }
-      temp = temp->next;
-      pos++;
-    }
-    return -1;
-  }
-
-  void display() {
-    Node* temp = head;
-    while (temp) {
-      cout << temp->data << " ";
-      temp = temp->next;
-    }
-    cout << endl;
-  }
-};
 
 int main() {
   LinkedList list;
   int choice, value, target;
+
   while (true) {
     cout << "\n--- Singly Linked List Menu ---\n";
     cout << "1. Insert at beginning\n";
@@ -168,6 +33,7 @@ int main() {
     cout << "0. Exit\n";
     cout << "Enter your choice: ";
     cin >> choice;
+
     switch (choice) {
       case 1: {
         cout << "Enter value: ";
