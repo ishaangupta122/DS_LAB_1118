@@ -1,5 +1,6 @@
-// 4) Write a program to find first non-repeating character in a string using Queue. Sample I/P: a a
-// b c Sample O/P: a -1 b b
+// 4) Write a program to find first non-repeating character in a string using Queue.
+// Sample I/P: a a b c
+// Sample O/P: a -1 b b
 
 #include <iostream>
 using namespace std;

@@ -145,4 +145,14 @@ class LinkedList {
     }
     cout << endl;
   }
+
+  //   Delete nodes after program termination
+  ~LinkedList() {
+    Node* curr = head;
+    while (curr) {
+      Node* nxt = curr->next;
+      delete curr;
+      curr = nxt;
+    }
+  }
 };

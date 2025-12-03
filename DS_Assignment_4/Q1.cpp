@@ -3,78 +3,14 @@
 // peek().
 
 #include <iostream>
+
+#include "queue.hpp"
+
 using namespace std;
-
-#define MAX 100
-
-int queue[MAX];
-int front = -1;
-int rear = -1;
-
-int isEmpty() {
-  return front == -1;
-}
-
-int isFull() {
-  return rear == MAX - 1 && front == 0;
-}
-
-void enqueue(int x) {
-  if (isFull()) {
-    cout << "Queue Overflow !" << endl;
-    return;
-  }
-  if (isEmpty()) {
-    front = 0;
-  }
-  rear++;
-  queue[rear] = x;
-}
-
-int dequeue() {
-  if (isEmpty()) {
-    cout << "Queue Underflow !" << endl;
-    return -1;
-  } else {
-    int dequeuedVal = queue[front];
-    if (front == rear) {
-      front = rear = -1;
-    } else {
-      front++;
-    }
-    return dequeuedVal;
-  }
-}
-
-int getFront() {
-  if (isEmpty()) {
-    return -1;
-  }
-  return queue[front];
-}
-
-int getRear() {
-  if (isEmpty()) {
-    return -1;
-  } else {
-    return queue[rear];
-  }
-}
-
-void display() {
-  if (isEmpty()) {
-    cout << "Queue is empty !" << endl;
-    return;
-  }
-  cout << "Queue elements are: " << endl;
-  for (int i = front; i <= rear; i++) {
-    cout << queue[i] << " ";
-  }
-  cout << endl;
-}
 
 int main() {
   int choice, val;
+  Queue<int> q;
 
   do {
     cout << "\n--- Linear Queue Menu ---" << endl;
@@ -88,41 +24,31 @@ int main() {
       case 1: {
         cout << "Enter value to enqueue: ";
         cin >> val;
-        enqueue(val);
+        q.enq(val);
         break;
       }
       case 2: {
-        int deqVal = dequeue();
-        if (deqVal != -1)
-          cout << "Dequeued: " << deqVal << endl;
+        q.deq();
         break;
       }
       case 3: {
-        cout << (isEmpty() ? "Queue is empty" : "Queue is not empty") << endl;
+        cout << (q.isEmpty() ? "Queue is empty" : "Queue is not empty") << endl;
         break;
       }
       case 4: {
-        cout << (isFull() ? "Queue is full" : "Queue is not full") << endl;
+        cout << (q.isFull() ? "Queue is full" : "Queue is not full") << endl;
         break;
       }
       case 5: {
-        int frontVal = getFront();
-        if (frontVal != -1)
-          cout << "Front: " << frontVal << endl;
-        else
-          cout << "Queue is empty" << endl;
+        q.getFront();
         break;
       }
       case 6: {
-        int rearVal = getRear();
-        if (rearVal != -1)
-          cout << "Rear: " << rearVal << endl;
-        else
-          cout << "Queue is empty" << endl;
+        q.getRear();
         break;
       }
       case 7: {
-        display();
+        q.display();
         break;
       }
       case 8: {
